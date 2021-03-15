@@ -1,7 +1,10 @@
-import knex from '../../knexfile';
-import knex from 'knex';
-import knexfile from '../../knexfile';
+const knex = require('knex');
+const knexfile = require('../../knexfile');
+const { Model } = require('objection');
 
-const env = process.env.NODE_ENV || 'development';
+function setupDb() {
+    const db = knex(knexfile.development);
+    Model.knex(db);
+}
 
-export default knex(knexfile[env]);
+module.exports = setupDb;

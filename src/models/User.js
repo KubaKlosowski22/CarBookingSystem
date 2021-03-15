@@ -1,9 +1,5 @@
-import knex from 'knex';
-import { Model } from 'objection';
-import knex from '../config/database';
+const { Model } = require('objection');
 
-
-Model.knex(knex);
 
 class User extends Model {
     static get tableName() {
@@ -11,4 +7,4 @@ class User extends Model {
     }
 }
 
-export default User;
+module.exports = User;
