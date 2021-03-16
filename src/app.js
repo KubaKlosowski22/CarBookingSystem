@@ -4,13 +4,12 @@ const bodyParser = require('body-parser');
 const dotEnv = require('dotenv');
 const dbSetup = require('../src/config/database');
 
-
 dbSetup();
 dotEnv.config();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Import routes
+//Routes
 const userRoute = require('../src/routes/User');
 
 app.use('/api/users', userRoute);
