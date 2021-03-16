@@ -31,6 +31,8 @@ router.post('/', async (req, res) => {
     
     try{
         const user = await User.query().insert({
+            firstName: req.body.firstName,
+            secondName: req.body.secondName,
             email: req.body.email,
             password: hashedPassword,
         })
@@ -41,4 +43,6 @@ router.post('/', async (req, res) => {
         res.send({message : err.stack})
     }
 })
+
+
 module.exports = router;
