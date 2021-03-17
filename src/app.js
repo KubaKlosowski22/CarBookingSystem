@@ -1,18 +1,21 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const dotEnv = require('dotenv');
 const dbSetup = require('../src/config/database');
 
-dbSetup();
 dotEnv.config();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+dbSetup();
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //Routes
-const userRoute = require('../src/routes/User');
+const userRoute = require('./routes/user');
+const authRoute = require('./routes/authenticate');
+const authenticate = require('./utils/authenticate');
 
 app.use('/api/users', userRoute);
+app.use('/api/auth', authRoute);
+
 
 app.get("/", (req, res) => {
     res.send('hi');
