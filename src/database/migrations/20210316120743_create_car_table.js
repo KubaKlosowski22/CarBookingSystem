@@ -4,8 +4,11 @@ exports.up = function(knex) {
         table.increments('id').primary()
         table.string('brand').notNull()
         table.string('model').notNull()
-        table.integer('horsePower').notNull()
-        table.string('productionYear').notNull()
+        table.integer('horse_power').notNull()
+        table.string('production_year').notNull()
+        table.boolean('is_available').notNull().defaultTo(true);
+        table.integer('price_per_day')
+        table.timestamps(false, true)
     })
 };
 

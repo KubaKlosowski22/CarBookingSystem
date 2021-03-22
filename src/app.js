@@ -11,10 +11,14 @@ app.use(express.json());
 //Routes
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/authenticate');
+const carRoute = require('./routes/car');
+const rentRoute = require('./routes/rent');
 
-app.use('/api/users', userRoute);
+
+app.use('/api/user', userRoute);
 app.use('/api/auth', authRoute);
-
+app.use('/api/car', carRoute);
+app.use('/api/rent', rentRoute);
 
 app.get("/", (req, res) => {
     res.send('hi');
