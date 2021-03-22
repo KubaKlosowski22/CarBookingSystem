@@ -9,6 +9,7 @@ npm, node, mysql2, knex
  - `npm install`
  - `cp .env.dist .env`
  - update .env with correct credentials
+ - `knex migrate:latest`
 
 ## Run
 
