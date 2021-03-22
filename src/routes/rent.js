@@ -42,7 +42,6 @@ router.post('/', async (req, res) => {
 })
 
 router.patch('/cancel-rent/:id', async (req, res) => {
-    console.log(req.params.id);
     try {
        const rent = await Rent.query().patch({end_date : req.body.endDate}).findById(req.params.id);
        const car = await Car.query().patch({is_available : true}).findById(req.body.carId);

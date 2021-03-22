@@ -1,7 +1,7 @@
 # Rent a car api 
 
 ## Prerequisites
-npm, node, mysql, knex
+npm, node, mysql2, knex
 
 ## Instalation
 
