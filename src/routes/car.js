@@ -25,7 +25,6 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-
     try {
         const car = await Car.query().insert({
             brand : req.body.brand,

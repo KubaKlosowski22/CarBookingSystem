@@ -15,9 +15,9 @@ const carRoute = require('./routes/car');
 const rentRoute = require('./routes/rent');
 
 
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
-app.use('/api/car', carRoute);
+app.use('/api/cars', carRoute);
 app.use('/api/rent', rentRoute);
 
 app.get("/", (req, res) => {
